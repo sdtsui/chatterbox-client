@@ -4,20 +4,23 @@ var app = {
   data: [],
 };
 
-
+/**
+ * Fetches and adds events.
+ * @return {[type]} [description]
+ */
 app.init = function(){
-    // debugger;
-    // this.data.push(this.fetch());
     var context = this;
+    this.fetch();
+    this.createChatBox();
+
     $("#main").find(".username").on('click', function(event){
       context.addFriend();
     });
     $("button").on('click', function(){
       context.handleSubmit();
     })
-    this.fetch();
-    this.createChatBox();
   };
+
 app.send = function(message){
     console.log('sending')
     $.ajax({
@@ -59,12 +62,11 @@ app.createChatBox = function(){
   _.each(this.data[0], function(value){
     console.log(value);
     $("#chatbox").append("<div>"+value.text+"<br></div>");
-  })
-
+  });
 };
 
 app.clearMessages = function(){
-    var chats = $("#chats");
+    var chats = $("#chatbox");
     var children = chats.children();
     children.remove();
   };
@@ -73,11 +75,13 @@ app.addRoom = function(roomName){
     var roomSelect = $("#roomSelect");
     roomSelect.append("<div>"+roomName+"</div>");
   };
+
 app.addMessage =  function(message) {
     var chats = $("#chats");
     chats.append("<div class ='username'>"+message.text+" "+message.username+"</div>");
     // var intoSelector = "."+message.username;
   };
+
 app.addFriend = function(userName){
     console.log("sup");
   };
@@ -85,4 +89,5 @@ app.addFriend = function(userName){
 app.handleSubmit = function(){
     this.addMessage($('input').val());
   };
+
 app.init();
