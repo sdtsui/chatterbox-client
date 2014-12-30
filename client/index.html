@@ -10,20 +10,18 @@
     <script src="bower_components/underscore/underscore.js"></script>
     <!-- your scripts -->
     <script src="env/config.json"></script>
-    <script src="scripts/app.js"></script>
   </head>
   <body>
     <div id="main">
       <h1>chatterbox</h1>
       <!-- Your HTML goes here! -->
-      <input class="inputMsg" type="text" value="Text"><button type ="button" id="send">Submit Bitches</button>
-      <button type ="button" id="refresh">Refresh</button>
-      <button type ="button" id="autoRefresh">Auto-Refresh</button>
-      <input class="inputRoom" type="text" value="Room Name">
-      <button type ="button" id="createRoom">Create Room</button>
+      <input class="inputMsg" type="text" value="Text">
+      <button type ="button" id="send">Submit Bitches</button><br>
+      <input class="inputRoom" type="text" value="default">
       <button type ="button" id="joinRoom">Join Room</button>
       <center><div id="chatbox"></div></center>
     </div>
+    <script src="scripts/app.js"></script>
   </body>
 </html>
 
