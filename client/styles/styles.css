@@ -82,3 +82,18 @@ form input[type=text] {
 .spinner img {
     padding: 10px;
 }
+
+.username {
+    color: red;
+    font-size: 10px;
+
+}
+
+.text{
+    font-style: italic;
+    font-size: 12px;
+}
+
+.friend{
+    color:blue;
+}
